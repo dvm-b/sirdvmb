@@ -1,4 +1,4 @@
-Import requests
+import requests
 import sys
 
 def check_channel_membership(user_id):
