@@ -2,7 +2,7 @@ import requests
 import sys
 import time
 
-api = "https://dumb-members-checker-api.vercel.app/api/"
+api = "https://duvm-mem-api-checker.vercel.app/"
 
 ch = "@unsely"
 
