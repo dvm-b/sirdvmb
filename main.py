@@ -2,7 +2,7 @@ import requests
 import sys
 
 
-api = "https://dvmbapi.vercel.app/api/"
+api = "https://dvmbapi-api.vercel.app/api/"
 
 ch = "@unsely"
 
