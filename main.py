@@ -15,9 +15,9 @@ def userid():
         except ValueError:
             print(f"{RED}Invalid input. Please enter a numeric Telegram User ID.{RESET}")
 
-def mem(uid):
+def mem(userid):
     try:
-        response = requests.get(api, params={"user_id": uid}, timeout=10)
+        response = requests.get(api, params={"user_id": userid}, timeout=10)
         response.raise_for_status()
         data = response.json()
     except requests.RequestException as e:
@@ -37,7 +37,7 @@ def mem(uid):
 print(f"{CYAN}Telegram Channel Access Verification via Vercel API{RESET}")
 uid = userid()
 print(f"{CYAN}Verifying access for User ID: {uid}...{RESET}")
-
+mem(userid)
 
 print(f"{GREEN}Membership verified successfully. You may now use this tool.{RESET}")
 
