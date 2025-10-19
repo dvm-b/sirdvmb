@@ -2,7 +2,7 @@ import requests
 import sys
 
 
-api = "https://duvm-mem-api-checker.vercel.app/api/"
+api = "https://dvmb.vercel.app/api/"
 
 ch = "@unsely"
 
