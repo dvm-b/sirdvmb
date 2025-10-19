@@ -1,29 +1,47 @@
 import requests
 import sys
+import time
 
-def check_channel_membership(user_id):
+API_URL = "https://dumb-members-checker-api.vercel.app/api/"
+
+CHANNEL_NAME = "@unsely"
+
+RED = "\033[31m"
+GREEN = "\033[32m"
+CYAN = "\033[36m"
+RESET = "\033[0m"
+
+def get_user_id():
+    while True:
+        try:
+            return int(input(f"{GREEN}Enter your Telegram User ID: {CYAN}"))
+        except ValueError:
+            print(f"{RED}Invalid input. Please enter a numeric Telegram User ID.{RESET}")
+
+def check_membership(user_id):
     try:
-        api_url = f"https://py-today-member-checker.vercel.app/?token=7391593372:AAFhLbgDhxgNmMZwlLIzB1VuxNnxykV83XQ&channel=@unsely&userid={user_id}"
-        response = requests.get(api_url)
+        response = requests.get(API_URL, params={"user_id": user_id}, timeout=10)
         response.raise_for_status()
         data = response.json()
-
-        if data.get("is_member", False):
-            print("\033[1;32m[✓] User is a member of @unsely. Access granted.\033[0m")
-            return True
-        else:
-            print("\033[1;31m[✗] User is not a member of @unsely.")
-            print("\033[1;31mPlease join @unsely and restart the tool.\033[0m")
-            sys.exit(1)
     except requests.RequestException as e:
-        print(f"\033[1;31m[✗] Error checking membership: {e}\033[0m")
+        print(f"{RED}[✖] Failed to reach API: {e}{RESET}")
         sys.exit(1)
     except ValueError:
-        print(f"\033[1;31m[✗] Invalid response from API: {data.get('error', 'Unknown error')}\033[0m")
+        print(f"{RED}[✖] Invalid JSON response from API.{RESET}")
         sys.exit(1)
 
-try:
-    check_channel_membership(ID)
-except NameError:
-    print("\033[1;31m[✗] Required variable (ID) not provided.\033[0m")
-    sys.exit(1)
+    if data.get("ok") and data.get("member"):
+        print(f"{GREEN}[✔] Access Granted: User is a member ({data.get('status')}){RESET}")
+    else:
+
+        print(f"{RED}[✖] Access Denied: Please join required channel {CHANNEL_NAME} so you can use this tool.{RESET}")
+        sys.exit(0)
+
+print(f"{CYAN}Telegram Channel Access Verification via Vercel API{RESET}")
+user_id = get_user_id()
+print(f"{CYAN}Verifying access for User ID: {user_id}...{RESET}")
+time.sleep(0.5)
+check_membership(user_id)
+print(f"{GREEN}Membership verified successfully. You may now use this tool.{RESET}")
+time.sleep(0.5)
+print(f"{GREEN}Starting main tool...{RESET}")
