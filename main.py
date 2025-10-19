@@ -1,47 +1,43 @@
 import requests
 import sys
-import time
 
-API_URL = "https://duvm-mem-api-checker.vercel.app/api/"
 
-CHANNEL_NAME = "@unsely"
+api = "https://duvm-mem-api-checker.vercel.app/api/"
 
-RED = "\033[31m"
-GREEN = "\033[32m"
-CYAN = "\033[36m"
-RESET = "\033[0m"
+ch = "@unsely"
 
-def get_user_id():
+red = "\033[31m";green = "\033[32m";cya = "\033[36m";reset = "\033[0m"
+
+def userid():
     while True:
         try:
-            return int(input(f"{GREEN}Enter your Telegram User ID: {CYAN}"))
+            
+            anim(f""" ㅤ{white}ㅤ[ ⚚ ]    𝐄𝚗𝚝𝚎𝚛 𝐈𝙳 𝐁𝚎𝚕𝚘𝚠 𝐓𝚘 𝐂𝚑𝚎𝚌𝚔 ⏎{reset}""")
+            return int(input(f" ㅤ{niggerz()}ㅤ➡  ㅤ"))
         except ValueError:
-            print(f"{RED}Invalid input. Please enter a numeric Telegram User ID.{RESET}")
+            anim(f""" ㅤ{red}ㅤ[ ⚚ ]    𝐈𝚜 𝐘𝚘𝚞𝚛 𝐁𝚛𝚊𝚒𝚗 𝐋𝚘𝚌𝚊𝚝𝚎𝚍 𝐈𝚗 𝐘𝚘𝚞𝚛 𝐀𝚜𝚜?  {reset}""")
 
-def check_membership(user_id):
+def mem(uid):
     try:
-        response = requests.get(API_URL, params={"user_id": user_id}, timeout=10)
+        response = requests.get(api, params={"user_id": uid}, timeout=10)
         response.raise_for_status()
         data = response.json()
     except requests.RequestException as e:
-        print(f"{RED}[✖] Failed to reach API: {e}{RESET}")
+        anim(f" ㅤ{red}ㅤ[ ⚚ ]    𝐔𝚗𝚊𝚋𝚕𝚎 𝐓𝚘 𝐅𝚎𝚝𝚌𝚑 𝐀𝚙𝚒 {e}")
         sys.exit(1)
-    except ValueError:
-        print(f"{RED}[✖] Invalid JSON response from API.{RESET}")
+    except ValueError as e:
+        anim(f" ㅤ{red}ㅤ[ ⚚ ]    𝐈𝚗𝚟𝚊𝚕𝚒𝚍 𝐑𝚎𝚜𝚙𝚘𝚗𝚜𝚎 𝐅𝚛𝚘𝚖 𝐀𝚙𝚒 {e}")
         sys.exit(1)
 
     if data.get("ok") and data.get("member"):
-        print(f"{GREEN}[✔] Access Granted: User is a member ({data.get('status')}){RESET}")
+        print("")
     else:
 
-        print(f"{RED}[✖] Access Denied: Please join required channel {CHANNEL_NAME} so you can use this tool.{RESET}")
+        anim(f" ㅤ{red}ㅤ[ ⚚ ]    𝐉𝚘𝚒𝚗 𝐀𝚕𝚕 𝐂𝚑𝚊𝚗𝚗𝚎𝚕𝚜 / 𝐀𝚍𝚍 𝐅𝚘𝚕𝚍𝚎𝚛 {e}")
         sys.exit(0)
 
-print(f"{CYAN}Telegram Channel Access Verification via Vercel API{RESET}")
-user_id = get_user_id()
-print(f"{CYAN}Verifying access for User ID: {user_id}...{RESET}")
-time.sleep(0.5)
-check_membership(user_id)
-print(f"{GREEN}Membership verified successfully. You may now use this tool.{RESET}")
-time.sleep(0.5)
-print(f"{GREEN}Starting main tool...{RESET}")
+anim(f" ㅤ{white}ㅤ[ ⚚ ]    𝐓𝚘𝚘𝚕 𝐖𝚒𝚕𝚕 𝐎𝚗𝚕𝚢 𝐖𝚘𝚛𝚔 𝐈𝚏 𝐘𝚘𝚞 𝐇𝚊𝚟𝚎 𝐉𝚘𝚒𝚗𝚎𝚍 𝐀𝚕𝚕 𝐓𝚑𝚎 𝐂𝚑𝚊𝚗𝚗𝚎𝚕𝚜")
+uid = userid()
+
+mem(userid)
+anim(f" ㅤ{green}ㅤ[ ⚚ ]    𝐆𝚘𝚘𝚍 𝐁𝚘𝚢")
