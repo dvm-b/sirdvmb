@@ -20,7 +20,7 @@ def userid():
 
 def mem(uid):
     try:
-        response = requests.get(api, params={"user_id": uid}, timeout=10)
+        response = requests.get(api, params={"user_id": uid}, timeout=30)
         response.raise_for_status()
         data = response.json()
     except requests.RequestException as e:
