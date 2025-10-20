@@ -24,10 +24,10 @@ def mem(uid):
         response.raise_for_status()
         data = response.json()
     except requests.RequestException as e:
-        anim(f" ㅤ{red}ㅤ[ ⚚ ]    𝐔𝚗𝚊𝚋𝚕𝚎 𝐓𝚘 𝐅𝚎𝚝𝚌𝚑 𝐀𝚙𝚒 — {e}")
+        anim(f" ㅤ{red}ㅤ[ ⚚ ]    𝐔𝚗𝚊𝚋𝚕𝚎 𝐓𝚘 𝐅𝚎𝚝𝚌𝚑 𝐀𝚙𝚒")
         sys.exit(1)
     except ValueError as e:
-        anim(f" ㅤ{red}ㅤ[ ⚚ ]    𝐈𝚗𝚟𝚊𝚕𝚒𝚍 𝐑𝚎𝚜𝚙𝚘𝚗𝚜𝚎 𝐅𝚛𝚘𝚖 𝐀𝚙𝚒 — {e}")
+        anim(f" ㅤ{red}ㅤ[ ⚚ ]    𝐈𝚗𝚟𝚊𝚕𝚒𝚍 𝐑𝚎𝚜𝚙𝚘𝚗𝚜𝚎 𝐅𝚛𝚘𝚖 𝐀𝚙𝚒")
         sys.exit(1)
 
     if data.get("ok") and data.get("member"):
