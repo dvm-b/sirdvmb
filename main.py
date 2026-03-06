@@ -1,6 +1,6 @@
 # — 𝐃
 import requests
-import sys
+import sys, webbrowser
 
 
 api = "https://dvmbmem.vercel.app/api/"
