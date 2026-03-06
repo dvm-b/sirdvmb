@@ -4,7 +4,7 @@ import sys, webbrowser
 
 
 api = "https://dvmbmem.vercel.app/api/"
-ch = "@diracts"
+ch = "@uouche"
 red = "\033[31m";green = "\033[32m";cya = "\033[36m";reset = "\033[0m"
 
 def userid():
