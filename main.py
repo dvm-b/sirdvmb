@@ -33,10 +33,11 @@ def mem(uid):
     else:
 
         print(f" ㅤ{red}ㅤ[ ⚚ ]    𝐉𝚘𝚒𝚗 𝐀𝚕𝚕 𝐂𝚑𝚊𝚗𝚗𝚎𝚕𝚜 / 𝐀𝚍𝚍 𝐅𝚘𝚕𝚍𝚎𝚛")
+        sys.exit(0)
+        
         webbrowser.open("https://t.me/addlist/BQ6h8UxN06Q4NjMx")
         print(f" ㅤ{cya}ㅤ[ ⚚ ]    𝐀𝚏𝚝𝚎𝚛 𝐉𝚘𝚒𝚗𝚒𝚗𝚐, 𝐑𝚎𝚜𝚝𝚊𝚛𝚝 𝐓𝚑𝚎 𝐓𝚘𝚘𝚕")
-        sys.exit(0)
-
+        
 print(f" ㅤ{cya}ㅤ[ ⚚ ]    𝐉𝚘𝚒𝚗 𝐀𝚕𝚕 𝐂𝚑𝚊𝚗𝚗𝚎𝚕𝚜 𝐅𝚒𝚛𝚜𝚝 𝐓𝚘 𝐏𝚛𝚘𝚌𝚎𝚎𝚍")
 uid = userid()
 
