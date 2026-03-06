@@ -4,9 +4,7 @@ import sys
 
 
 api = "https://dvmbmem.vercel.app/api/"
-
-ch = "@reuiews"
-
+ch = "@diracts"
 red = "\033[31m";green = "\033[32m";cya = "\033[36m";reset = "\033[0m"
 
 def userid():
@@ -35,7 +33,7 @@ def mem(uid):
     else:
 
         print(f" ㅤ{red}ㅤ[ ⚚ ]    𝐉𝚘𝚒𝚗 𝐀𝚕𝚕 𝐂𝚑𝚊𝚗𝚗𝚎𝚕𝚜 / 𝐀𝚍𝚍 𝐅𝚘𝚕𝚍𝚎𝚛")
-        webbrowser.open("https://t.me/addlist/-zdOU4i16nNjZjll")
+        webbrowser.open("https://t.me/addlist/BQ6h8UxN06Q4NjMx")
         print(f" ㅤ{cya}ㅤ[ ⚚ ]    𝐀𝚏𝚝𝚎𝚛 𝐉𝚘𝚒𝚗𝚒𝚗𝚐, 𝐑𝚎𝚜𝚝𝚊𝚛𝚝 𝐓𝚑𝚎 𝐓𝚘𝚘𝚕")
         sys.exit(0)
 
